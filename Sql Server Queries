@@ -1,0 +1,46 @@
+create database ByteBank
+
+CREATE TABLE Cliente
+(
+	IdCliente int IDENTITY(1,1) PRIMARY KEY,
+	UF Varchar(2) not null,
+  Celular Varchar(30) not null,
+)  
+
+CREATE TABLE Financiamento
+(
+    IdFinancimaneto INT PRIMARY KEY,
+    TipoFinanciamento Nvarchar(100) not null,
+    ValorTotal INT not null,
+    DataVencimento Datetime not null,
+    Cliente_IdCliente INT FOREIGN KEY REFERENCES Cliente 
+)  
+
+CREATE TABLE PARCELAS
+(
+	NumeroDaParcela INT not null,
+	ValorDaParcela INT not null,
+	DataVencimento Datetime not null,
+	DataPagamento Datetime not null,
+	Financiamento_IdFinancimaneto INT FOREIGN KEY REFERENCES Financiamento
+)
+
+INSERT INTO Cliente
+           (UF,
+           Celular)
+     VALUES
+           ('SP','011954873874'),('SP','011954873878'),('SP','011954873871'),('SP','0119548738742'),('SP','01195487328'),('SP','011954877564'),('SP','0119548738237')
+		   ,('SP','011954873554'),('SP','011954871009'),('SP','011954873009'),('SP','011954873111'),('SP','011954873888'),('SP','011954871234'),('SP','011954872836')
+		   ,('SP','011954871723'),('SP','011954873122'),('SP','011954873144'),('SP','011954873155'),('SP','0119548738188'),('SP','01195487098')
+
+
+INSERT INTO Cliente(UF,Celular)
+VALUES('RJ', '021947561829')
+
+
+*/
+
+
+Select ¨* from Financiamentos as F
+INNER JOIN Parcelas as P
+ON F.IdFinancimaneto=P.Financiamento_IdFinancimaneto
