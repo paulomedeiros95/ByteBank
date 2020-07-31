@@ -1,0 +1,4 @@
+					TEMPOS DE EXPANSÃO DIGITAL
+
+Para o desenvolvimento de uma arquitetura nova e moderna eu adotaria uma abordagem baseada em micro serviços. Com esse tipo de arquitetura eu consigo escalar meus serviços de acordo com a demanda.
+Refente a escolha da tecnologia utilizada para database minha empresa escholheria Cosmos DB da Microsoft ou MongoDB pois a premissa do escopo assume um grande trafego de  de dados a todo tempo.
